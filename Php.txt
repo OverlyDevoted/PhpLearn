@@ -1,0 +1,32 @@
+Php is run on the server and not the browser 
+it's run on the 80% of all the websites 
+php hypertext preprocessor 
+HOW DOES PHP WORK?:
+client from his browser sends a http request to the php web server which in return processes the request and sends a html response to the client' browser
+the php server can also communicate with a database and is usually paired with sql databases (mysql, microsoft sql server, postgres, oracle) 
+
+PHP can be written alongside html so a solid foundation of htmml is needed 
+XAMMP is a crossplatform webserver stack and is a software suite and contains different types of softwares 
+
+$_GET and $_POST are special variables that are used to collect
+data from a form. Basically in the form tag you reference a php file to which
+u'd send data and on submittion it's then sent to that file
+<form action="some_file.php" method="get">
+any data sent through a get form is appended to the url
+so you could look at the lesson 4 code and u'd see after submitting the
+form the link would look like this: 
+http://localhost/website/index.php?username=K3ymn&password=Ilikebigcock
+when using method="post" the values are not appended to the URL so it's in  way more secure
+$_GET =     Data is appended to the url
+            NOT secure
+            char limit
+            bookmark is possible w/ values
+            get request can be cached 
+            better for a search page
+
+$_POST =    Data is packaged inside the body of the HTTP request
+            MORE secure
+            no data limit
+            Cannot bookmark duh
+            GET requests are not cached
+            Better for submitting credentials
