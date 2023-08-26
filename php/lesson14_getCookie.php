@@ -5,9 +5,11 @@
         return;
     }
     $locations = explode("\/-\/", $_COOKIE["fav_location"]); 
-    echo "List of locations:<br>";
+    echo "<h3 style=\"margin-top:0;margin-bottom:0;\">List of locations in the array:</h3><br>";
+    $counter = 0;
     foreach($locations as $location)
     {
-        echo "{$location} <br>";
+        $counter++;
+        echo "{$counter}. {$location} <br>";
     }
 ?>

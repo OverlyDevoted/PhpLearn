@@ -5,7 +5,7 @@
         echo "Enter valid location <br>";
         return;
     }
-    echo "Found location {$location} <br>";
+    echo "New location to add {$location} <br>";
     $locationArr = !empty($_COOKIE["fav_location"])? [$_COOKIE["fav_location"], $location] : [$location];
     $locationRes = implode("\/-\/", $locationArr);
     setcookie("fav_location", $locationRes, time()+86400, "/");

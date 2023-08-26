@@ -18,7 +18,7 @@
 
     if($conn)
     {
-        echo "Successfully connected to MySQL<br>";
+        echo "Successfully connected to <span style=\"color:#036ffc\">My</span><span style=\"color:#fcc603\">SQL</span><br>";
     }            
     else
     {

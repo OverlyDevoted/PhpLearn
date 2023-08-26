@@ -12,7 +12,7 @@ Things learned in this lesson
 
 <body>
     <h1>Lesson 7</h1>
-    <form action="index.php" method="post">
+    <form action="lesson7.php" method="post">
         <input type="number" name="times" placeholder=10>
         <input type="submit" value="submit">
     </form>

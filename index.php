@@ -1,3 +1,7 @@
+<?php
+
+include("php/lesson17_database.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <!-- 
@@ -31,16 +35,29 @@
         background-color: black;
         color: white;
     }
-
+    
     form {
         display: flex;
         flex-direction: column;
         width: 15%;
+        background-color: #1c1c1c;
+        padding: 8px;
+        border-radius: 4px;
+    }
+
+    .user_list {
+        display: flex;
+        flex-direction: column;
+        
+        width: 20%;
+    }
+
+    .user_list hr {
+        width: 100%;
     }
 </style>
 <?php
 
-include("php/lesson17_database.php");
 
 /* $sql = "INSERT INTO users (user, password)
             VALUES ('spongebobo','pineapple1')";
@@ -56,15 +73,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             try {
                 mysqli_query($conn, $query);
-                echo "User registered<br>";
+                echo "<span style=\"color:#a1fc03\">User successfully registered</span><br>";
             } catch (mysqli_sql_exception) {
                 echo "Couldn't register user<br>";
             }
         } else {
-            echo "Username is already taken, please provide a different username<br>";
+            echo "<span style=\"color:#fc4a03\">Username is already taken, please provide a different username</span><br>";
         }
     } else {
-        echo "Enter username and password<br>";
+        echo "<span style=\"color:#fc4a03\">Enter username and password</span><br>";
     }
 }
 getUsers($conn);
@@ -73,32 +90,29 @@ mysqli_close($conn);
 function isRegistered($conn, $username)
 {
     $query = "SELECT * FROM users WHERE '$username' = users.username";
-    try{
+    try {
         $result = mysqli_query($conn, $query);
         return mysqli_num_rows($result) > 0;
-    }
-    catch(mysqli_sql_exception)
-    {
+    } catch (mysqli_sql_exception) {
         return false;
     }
 }
 function getUsers($conn)
 {
     $query = "SELECT * FROM users";
-    try{
+    try {
         $result = mysqli_query($conn, $query);
-    
+
         if (mysqli_num_rows($result) > 0) {
-            echo "<br><hr>";
+            echo "<div class=\"user_list\"><h2>Users</h2><hr>";
             while ($row = mysqli_fetch_assoc($result)) {
                 echo $row["id"] . "<br>";
                 echo $row["username"] . "<br>";
                 echo $row["first_logged"] . "<br><hr>";
             };
+            echo "</div>";
         }
-    }
-    catch(mysqli_sql_exception)
-    {
+    } catch (mysqli_sql_exception) {
         echo "Error occured acquiring data from the database";
     }
 }
