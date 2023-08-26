@@ -4,9 +4,6 @@ session_start();
 <!DOCTYPE html>
 <html lang="en">
 <!-- 
-        Things learned this lesson:
-        1. Sessions are used to store global data between pages
-        2. Header function can be used to programitically navigate between pages
 -->
 
 <head>
